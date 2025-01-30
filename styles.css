@@ -76,6 +76,7 @@ body {
     gap: 0.5rem;
 }
 
+/* Critical CSS for hero section */
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
