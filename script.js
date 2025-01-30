@@ -36,11 +36,15 @@ window.addEventListener('load', () => {
         }
     }, 700);
 
-    axe.run().then(results => {
-        console.log(results);
-    }).catch(err => {
-        console.error(err);
-    });
+    if (typeof axe !== 'undefined') {
+        axe.run().then(results => {
+            console.log(results);
+        }).catch(err => {
+            console.error(err);
+        });
+    } else {
+        console.error('axe-core nu este definit.');
+    }
 });
 
 const menuToggle = document.getElementById('menuToggle');
