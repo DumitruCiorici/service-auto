@@ -20,6 +20,12 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         loadingScreen.remove();
     }, 700);
+
+    axe.run().then(results => {
+        console.log(results);
+    }).catch(err => {
+        console.error(err);
+    });
 });
 
 const menuToggle = document.getElementById('menuToggle');
