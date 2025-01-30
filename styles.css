@@ -20,7 +20,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--accent-color);
+    background-color: #f0f0f0;
 }
 
 .navbar {
@@ -212,7 +212,7 @@ body {
 }
 
 .service-box {
-    background: white;
+    background: #ffffff;
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -297,7 +297,7 @@ body {
 }
 
 .faq-item {
-    background: white;
+    background: #ffffff;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
