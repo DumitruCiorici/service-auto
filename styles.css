@@ -2,9 +2,9 @@
     --primary-color: #000000; /* Black */
     --secondary-color: #ffffff; /* White */
     --accent-color: #f0f0f0; /* Light gray for sections */
-    --text-color: #000000; /* Black */
-    --link-color: #000000; /* Black */
-    --button-primary-bg: #333333; /* Dark gray for buttons */
+    --text-color: #333333; /* Dark gray for better contrast */
+    --link-color: #1a0dab; /* Dark blue for links */
+    --button-primary-bg: #4a4a4a; /* Darker gray for buttons */
     --button-secondary-bg: #ffffff; /* White */
     --button-text-color: #ffffff; /* White */
     --transition: all 0.3s ease;
@@ -55,14 +55,14 @@ body {
 }
 
 .nav-link {
-    color: var(--text-color); /* Black */
+    color: var(--text-color); /* Dark gray */
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
 }
 
 .nav-link:hover {
-    color: var(--link-color);
+    color: var(--link-color); /* Dark blue */
 }
 
 .nav-phone {
@@ -203,7 +203,7 @@ body {
     text-align: center;
     transition: var(--transition);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    color: var(--text-color); /* Black */
+    color: var(--text-color); /* Dark gray */
 }
 
 .service-box:hover {
@@ -525,13 +525,13 @@ footer {
 }
 
 .footer-links a {
-    color: var(--text-color); /* Black */
+    color: var(--text-color); /* Dark gray */
     text-decoration: none;
     transition: var(--transition);
 }
 
 .footer-links a:hover {
-    color: var(--link-color);
+    color: var(--link-color); /* Dark blue */
 }
 
 .social-icons {
