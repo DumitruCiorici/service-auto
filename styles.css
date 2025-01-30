@@ -1,8 +1,12 @@
 :root {
-    --primary-color: #e31837;
-    --secondary-color: #1a1a1a;
-    --accent-color: #f8f8f8;
-    --text-color: #333;
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --link-color: #2980b9;
+    --button-primary-bg: #3498db;
+    --button-secondary-bg: #95a5a6;
+    --button-text-color: #ffffff;
     --transition: all 0.3s ease;
 }
 
@@ -16,13 +20,14 @@ body {
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    background-color: var(--accent-color);
 }
 
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--secondary-color);
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
@@ -30,6 +35,7 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     height: 70px;
+    color: var(--button-text-color);
 }
 
 .nav-brand {
@@ -49,14 +55,14 @@ body {
 }
 
 .nav-link {
-    color: var(--text-color);
+    color: var(--button-text-color);
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+    color: var(--link-color);
 }
 
 .nav-phone {
@@ -72,14 +78,14 @@ body {
 
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url('https://images.unsplash.com/photo-1625047509168-a7026ade842b') center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    color: var(--button-text-color);
     padding: 0 1rem;
     padding-top: 70px;
 }
@@ -127,13 +133,13 @@ body {
 }
 
 .btn-primary {
-    background: var(--primary-color);
-    color: white;
+    background-color: var(--button-primary-bg);
+    color: var(--button-text-color);
 }
 
 .btn-secondary {
-    background: transparent;
-    color: white;
+    background-color: var(--button-secondary-bg);
+    color: var(--button-text-color);
     border: 2px solid white;
 }
 
@@ -506,7 +512,7 @@ body {
 
 footer {
     background: var(--secondary-color);
-    color: white;
+    color: var(--button-text-color);
     padding: 3rem 5% 1rem;
 }
 
@@ -517,6 +523,7 @@ footer {
     max-width: 1200px;
     margin: 0 auto 2rem;
     padding: 0 20px;
+    background-color: var(--secondary-color);
 }
 
 .footer-brand h3 {
@@ -530,13 +537,13 @@ footer {
 }
 
 .footer-links a {
-    color: white;
+    color: var(--button-text-color);
     text-decoration: none;
     transition: var(--transition);
 }
 
 .footer-links a:hover {
-    color: var(--primary-color);
+    color: var(--link-color);
 }
 
 .social-icons {
@@ -546,13 +553,13 @@ footer {
 }
 
 .social-icons a {
-    color: white;
+    color: var(--button-text-color);
     font-size: 1.5rem;
     transition: var(--transition);
 }
 
 .social-icons a:hover {
-    color: var(--primary-color);
+    color: var(--link-color);
 }
 
 .footer-bottom {
@@ -920,7 +927,7 @@ body.loading {
 
 .about {
     padding: 3rem 20px;
-    background-color: #f8f9fa;
+    background-color: var(--accent-color);
     text-align: center;
 }
 
@@ -939,7 +946,7 @@ body.loading {
 
 .map {
     padding: 3rem 20px;
-    background-color: #f8f9fa;
+    background-color: var(--accent-color);
     text-align: center;
 }
 
