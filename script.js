@@ -3,9 +3,6 @@ document.body.classList.remove('loading');
 window.addEventListener('load', () => {
     document.body.classList.remove('hidden');
 
-    // Codul pentru inițializarea hărții
-    initializeMap();
-
     const loadingScreen = document.querySelector('.loading-screen');
     const heroContent = document.querySelector('.hero-content');
     const heroButtons = document.querySelector('.hero-buttons');
@@ -45,19 +42,6 @@ window.addEventListener('load', () => {
         console.error(err);
     });
 });
-
-// Funcția pentru inițializarea hărții
-function initializeMap() {
-    const map = L.map('mapContainer').setView([45.7640, 4.8357], 13); 
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-    }).addTo(map);
-
-    L.marker([45.7640, 4.8357]).addTo(map)
-        .bindPopup('Locația noastră!')
-        .openPopup(); 
-}
 
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
@@ -208,4 +192,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-}); 
+});
+
+const map = L.map('mapContainer').setView([45.7640, 4.8357], 13); 
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+}).addTo(map);
+
+L.marker([45.7640, 4.8357]).addTo(map)
+    .bindPopup('Locația noastră!')
+    .openPopup(); 
