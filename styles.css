@@ -89,14 +89,13 @@ body {
     color: var(--text-color); /* Black */
     padding: 0 1rem;
     padding-top: 70px;
+    transition: none;
 }
 
 .hero-content {
     margin-bottom: 4rem;
     opacity: 1;
     transform: translateY(0);
-    transition: none;
-    padding: 0 20px;
 }
 
 .hero-content h1 {
@@ -111,7 +110,6 @@ body {
     margin-top: 2rem;
     opacity: 1;
     transform: translateY(0);
-    transition: none;
 }
 
 .btn {
@@ -144,17 +142,13 @@ body {
     margin-top: 2rem;
     opacity: 1;
     transform: translateY(0);
-    transition: none;
 }
 
 .feature {
     background: rgba(255, 255, 255, 0.1); /* Fundal semi-transparent */
     padding: 1.5rem; /* Padding interior */
     border-radius: 10px; /* Colțuri rotunjite */
-    backdrop-filter: blur(5px); /* Efect de blur */
-    opacity: 1; /* Asigură-te că este complet vizibil */
-    transform: translateY(0); /* Asigură-te că nu este mutat */
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Tranziție pentru efecte */
+    transition: none;
 }
 
 .feature.animate {

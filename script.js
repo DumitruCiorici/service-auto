@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
     heroFeatures.style.opacity = '1';
     features.forEach(feature => {
         feature.style.opacity = '1';
-        feature.style.transform = 'translateY(0)';
+        feature.style.transform = 'none';
     });
     
     setTimeout(() => {
