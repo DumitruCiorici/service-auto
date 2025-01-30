@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Elite Auto Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <meta name="description" content="Elite Auto Service oferă servicii auto profesionale, inclusiv diagnoză computerizată, schimb de ulei și reparații generale.">
+    <meta name="keywords" content="service auto, diagnoză auto, schimb ulei, reparații auto, Elite Auto Service">
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="tools">
+                <div class="tool"></div>
+                <div class="tool"></div>
+            </div>
+        </div>
+        <div class="loading-text">Elite Auto Service</div>
+        <div class="loading-subtext">Excelență în service auto</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo">🔧</span>
+            <h1>Elite Auto</h1>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <a href="#home" class="nav-link">Acasă</a>
+            <a href="#about" class="nav-link">Despre Noi</a>
+            <a href="#services" class="nav-link">Servicii</a>
+            <a href="#gallery" class="nav-link">Galerie</a>
+            <a href="#map" class="nav-link">Harta</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="tel:+40123456789" class="nav-phone">
+                <i class="fas fa-phone"></i> 
+                <span>0123 456 789</span>
+            </a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Service Auto Profesional</h1>
+            <p>Specialiști în reparații auto și întreținere</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Programează-te</a>
+                <a href="#services" class="btn btn-secondary">Vezi Serviciile</a>
+            </div>
+        </div>
+        <div class="hero-features">
+            <div class="feature">
+                <i class="fas fa-tools"></i>
+                <h3>Echipamente Moderne</h3>
+            </div>
+            <div class="feature">
+                <i class="fas fa-user-tie"></i>
+                <h3>Personal Calificat</h3>
+            </div>
+            <div class="feature">
+                <i class="fas fa-clock"></i>
+                <h3>Service Rapid</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="section-title">Despre Noi</h2>
+        <p>La Elite Auto Service, ne dedicăm să oferim cele mai bune servicii auto clienților noștri. Cu o experiență de peste 20 de ani în domeniu, echipa noastră de tehnicieni calificați este pregătită să se ocupe de toate nevoile mașinii tale. Ne mândrim cu utilizarea echipamentelor moderne și a pieselor de calitate superioară pentru a asigura satisfacția clienților noștri.</p>
+        <p>Fie că este vorba de o revizie de rutină sau de reparații complexe, suntem aici pentru a te ajuta. Contactează-ne pentru a programa o vizită!</p>
+    </section>
+
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number" data-target="20">0</span>
+                <p>Ani Experiență</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="15000">0</span>
+                <p>Clienți Mulțumiți</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="100">0</span>
+                <p>Tehnicieni Experți</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="24">0</span>
+                <p>Premii Service</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2 class="section-title">Serviciile Noastre</h2>
+        <div class="services-container">
+            <div class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Diagnoză Computerizată</h3>
+                <p>Identificăm rapid și precis problemele mașinii tale</p>
+                <a href="#contact" class="service-link">Află mai multe</a>
+            </div>
+            <div class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-oil-can"></i>
+                </div>
+                <h3>Schimb Ulei</h3>
+                <p>Folosim doar uleiuri și filtre de cea mai bună calitate</p>
+                <a href="#contact" class="service-link">Află mai multe</a>
+            </div>
+            <div class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-car-battery"></i>
+                </div>
+                <h3>Sisteme Electrice</h3>
+                <p>Reparații și întreținere sisteme electrice auto</p>
+                <a href="#contact" class="service-link">Află mai multe</a>
+            </div>
+            <div class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Mecanică Generală</h3>
+                <p>Reparații complete pentru orice tip de autovehicul</p>
+                <a href="#contact" class="service-link">Află mai multe</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">Galerie Foto</h2>
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Imaginile vor fi adăugate dinamic prin JavaScript -->
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2 class="section-title">Întrebări Frecvente</h2>
+        <div class="faq-container">
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Cât durează o revizie completă?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>O revizie completă durează între 2-3 ore pentru mașinile obișnuite. Pentru modele premium sau lucrări complexe, poate dura până la 4-5 ore. Vă vom comunica timpul exact după diagnosticare.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Ce include pachetul standard de revizie?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Pachetul standard include: schimb ulei și filtre, verificare sistem frânare, verificare direcție, verificare suspensie, diagnosticare electronică, verificare nivel lichide și presiune anvelope.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Oferiți garanție pentru reparații?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Da, oferim garanție pentru toate reparațiile efectuate: 6 luni pentru manoperă și conform producătorului pentru piese. Păstrați factura și certificatul de garanție pentru orice reclamație.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Ce metode de plată acceptați?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Acceptăm plăți cu card bancar (Visa, Mastercard), numerar, și transfer bancar pentru companii. Pentru reparații mai costisitoare, oferim și posibilitatea plății în rate prin partenerii noștri bancari.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Cum programez o vizită la service?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Puteți face o programare prin formularul de contact de pe site, telefonic la numărul afișat în header, sau direct la sediul nostru. Recomandăm programarea cu cel puțin 2-3 zile înainte.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Folosiți piese originale?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Da, folosim piese originale sau aftermarket de calitate superioară, în funcție de preferințele clientului. Toate piesele sunt însoțite de certificat de garanție și factură.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 Auto Street, City, State 12345</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>(555) 123-4567</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@autoproservices.com</p>
+                </div>
+                <div class="business-hours">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                    <p>Saturday: 9:00 AM - 3:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" required>
+                            <option value="">Select Service</option>
+                            <option value="diagnostic">Diagnostic</option>
+                            <option value="oil">Oil Change</option>
+                            <option value="electric">Electrical System</option>
+                            <option value="mechanical">General Mechanics</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="map" class="map">
+        <h2 class="section-title">Locațiile Noastre</h2>
+        <div id="mapContainer" style="height: 400px;"></div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Elite Auto Service</h3>
+                <p>Service Auto Profesional</p>
+            </div>
+            <div class="footer-links">
+                <h3>Link-uri Rapide</h3>
+                <a href="#home">Acasă</a>
+                <a href="#services">Servicii</a>
+                <a href="#gallery">Galerie</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h3>Urmărește-ne</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Elite Auto Service. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
