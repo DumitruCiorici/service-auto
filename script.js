@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
         axe.run().then(results => {
             console.log(results);
         }).catch(err => {
-            console.error(err);
+            console.error('Eroare axe-core:', err);
         });
     } else {
         console.error('axe-core nu este definit.');
