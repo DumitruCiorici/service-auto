@@ -1,27 +1,25 @@
-document.body.classList.add('loading');
+document.body.classList.remove('loading');
 
 window.addEventListener('load', () => {
+    const loadingScreen = document.querySelector('.loading-screen');
+    const heroContent = document.querySelector('.hero-content');
+    const heroButtons = document.querySelector('.hero-buttons');
+    const heroFeatures = document.querySelector('.hero-features');
+    const features = document.querySelectorAll('.feature');
+    
+    loadingScreen.classList.add('fade-out');
+    
+    heroContent.style.opacity = '1';
+    heroButtons.style.opacity = '1';
+    heroFeatures.style.opacity = '1';
+    features.forEach(feature => {
+        feature.style.opacity = '1';
+        feature.style.transform = 'translateY(0)';
+    });
+    
     setTimeout(() => {
-        const loadingScreen = document.querySelector('.loading-screen');
-        const heroContent = document.querySelector('.hero-content');
-        const heroButtons = document.querySelector('.hero-buttons');
-        const heroFeatures = document.querySelector('.hero-features');
-        const features = document.querySelectorAll('.feature');
-        
-        loadingScreen.classList.add('fade-out');
-        document.body.classList.remove('loading');
-        
-        heroContent.classList.add('animate');
-        heroButtons.classList.add('animate');
-        heroFeatures.classList.add('animate');
-        features.forEach(feature => {
-            feature.classList.add('animate');
-        });
-        
-        setTimeout(() => {
-            loadingScreen.remove();
-        }, 700);
-    }, 2100);
+        loadingScreen.remove();
+    }, 700);
 });
 
 const menuToggle = document.getElementById('menuToggle');
