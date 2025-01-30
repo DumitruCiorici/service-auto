@@ -49,20 +49,6 @@ const galleryImages = [
     'https://images.unsplash.com/photo-1504222490345-c075b6008014'
 ];
 
-const galleryGrid = document.getElementById('galleryGrid');
-
-galleryImages.forEach(imageUrl => {
-    const galleryItem = document.createElement('div');
-    galleryItem.className = 'gallery-item';
-    
-    const img = document.createElement('img');
-    img.src = imageUrl;
-    img.alt = 'Auto Service Gallery Image';
-    
-    galleryItem.appendChild(img);
-    galleryGrid.appendChild(galleryItem);
-});
-
 const formGroups = document.querySelectorAll('.form-group');
 
 formGroups.forEach(group => {
