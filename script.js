@@ -45,6 +45,8 @@ window.addEventListener('load', () => {
     } else {
         console.error('axe-core nu este definit.');
     }
+
+    initializeMap();
 });
 
 const menuToggle = document.getElementById('menuToggle');
@@ -198,12 +200,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-const map = L.map('mapContainer').setView([45.7640, 4.8357], 13); 
+function initializeMap() {
+    const map = L.map('mapContainer').setView([45.7640, 4.8357], 13); 
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-}).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+    }).addTo(map);
 
-L.marker([45.7640, 4.8357]).addTo(map)
-    .bindPopup('Locația noastră!')
-    .openPopup(); 
+    L.marker([45.7640, 4.8357]).addTo(map)
+        .bindPopup('Locația noastră!')
+        .openPopup(); 
+} 

@@ -92,10 +92,16 @@ body {
     transition: none;
 }
 
+.hero-content,
+.hero-buttons,
+.hero-features {
+    opacity: 0; /* Ascundem inițial */
+    transform: translateY(20px); /* Poziția inițială */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Adăugăm tranziții */
+}
+
 .hero-content {
     margin-bottom: 4rem;
-    opacity: 1;
-    transform: none;
 }
 
 .hero-content h1 {
@@ -108,8 +114,6 @@ body {
     gap: 1rem;
     justify-content: center;
     margin-top: 2rem;
-    opacity: 1;
-    transform: none;
 }
 
 .btn {
@@ -140,15 +144,12 @@ body {
     max-width: 900px;
     width: 90%;
     margin-top: 2rem;
-    opacity: 1;
-    transform: none;
 }
 
 .feature {
     background: rgba(255, 255, 255, 0.1); /* Fundal semi-transparent */
     padding: 1.5rem; /* Padding interior */
     border-radius: 10px; /* Colțuri rotunjite */
-    transition: none;
 }
 
 .feature.animate {
