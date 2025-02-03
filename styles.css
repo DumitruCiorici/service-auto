@@ -137,9 +137,21 @@ body {
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
-    transition: var(--transition);
-    background-color: var(--button-primary-bg); /* Dark gray */
-    color: var(--button-text-color); /* White */
+    transition: all 0.3s ease;
+    background-color: var(--button-primary-bg);
+    color: var(--button-text-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
 }
 
 .btn-primary {
@@ -147,10 +159,19 @@ body {
     color: var(--button-text-color);
 }
 
+.btn-primary:hover {
+    background-color: #333; /* O nuanță mai deschisă */
+}
+
 .btn-secondary {
-    background-color: var(--button-secondary-bg); /* White */
-    color: var(--text-color); /* Black */
-    border: 2px solid var(--text-color); /* Black border */
+    background-color: var(--button-secondary-bg);
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-color);
+    color: var(--button-secondary-bg);
 }
 
 .feature {
@@ -160,6 +181,13 @@ body {
     color: var(--secondary-color);
     opacity: 1;
     transform: none;
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .feature.animate {
@@ -177,6 +205,11 @@ body {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover i {
+    transform: scale(1.2);
 }
 
 .feature h2 {
