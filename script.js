@@ -359,17 +359,16 @@ function initializeServicesSlider() {
     
     let currentIndex = 0;
     const boxesPerView = window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1;
+    const totalSlides = Math.ceil(serviceBoxes.length / boxesPerView);
     
     // Create dots
-    serviceBoxes.forEach((_, index) => {
-        if (index % boxesPerView === 0) {
-            const dot = document.createElement('div');
-            dot.classList.add('slider-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(index));
-            dotsContainer.appendChild(dot);
-        }
-    });
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('slider-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i * boxesPerView));
+        dotsContainer.appendChild(dot);
+    }
     
     function updateDots() {
         const dots = document.querySelectorAll('.slider-dot');
@@ -380,25 +379,29 @@ function initializeServicesSlider() {
     
     function goToSlide(index) {
         currentIndex = index;
-        const offset = serviceBoxes[index].offsetLeft;
-        container.scrollTo({
-            left: offset,
-            behavior: 'smooth'
-        });
+        const slideWidth = serviceBoxes[0].offsetWidth + 20; // width + gap
+        const translateValue = -currentIndex * slideWidth;
+        container.style.transform = `translateX(${translateValue}px)`;
         updateDots();
+        
+        // Update button states
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'all';
+        
+        const lastPossibleIndex = serviceBoxes.length - boxesPerView;
+        nextBtn.style.opacity = currentIndex >= lastPossibleIndex ? '0.5' : '1';
+        nextBtn.style.pointerEvents = currentIndex >= lastPossibleIndex ? 'none' : 'all';
     }
     
     function slideNext() {
         if (currentIndex < serviceBoxes.length - boxesPerView) {
-            currentIndex++;
-            goToSlide(currentIndex);
+            goToSlide(currentIndex + boxesPerView);
         }
     }
     
     function slidePrev() {
         if (currentIndex > 0) {
-            currentIndex--;
-            goToSlide(currentIndex);
+            goToSlide(currentIndex - boxesPerView);
         }
     }
     
@@ -412,7 +415,7 @@ function initializeServicesSlider() {
     
     container.addEventListener('touchstart', e => {
         touchStartX = e.changedTouches[0].screenX;
-    });
+    }, { passive: true });
     
     container.addEventListener('touchend', e => {
         touchEndX = e.changedTouches[0].screenX;
@@ -421,14 +424,21 @@ function initializeServicesSlider() {
         } else if (touchEndX - touchStartX > 50) {
             slidePrev();
         }
-    });
+    }, { passive: true });
+    
+    // Initialize first slide
+    goToSlide(0);
     
     // Update slider on window resize
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        const newBoxesPerView = window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1;
-        if (newBoxesPerView !== boxesPerView) {
-            location.reload();
-        }
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const newBoxesPerView = window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1;
+            if (newBoxesPerView !== boxesPerView) {
+                location.reload();
+            }
+        }, 250);
     });
 }
 
