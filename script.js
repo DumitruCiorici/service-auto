@@ -17,10 +17,6 @@ window.addEventListener('load', () => {
     document.body.classList.remove('hidden');
     
     const loadingScreen = document.querySelector('.loading-screen');
-    const heroContent = document.querySelector('.hero-content');
-    const heroButtons = document.querySelector('.hero-buttons');
-    const heroFeatures = document.querySelector('.hero-features');
-    const features = document.querySelectorAll('.feature');
     
     if (loadingScreen) {
         loadingScreen.classList.add('fade-out');
@@ -28,23 +24,6 @@ window.addEventListener('load', () => {
             loadingScreen.remove();
         }, 700);
     }
-    
-    if (heroContent) {
-        heroContent.style.opacity = '1';
-        heroContent.style.transform = 'translateY(0)';
-    }
-    if (heroButtons) {
-        heroButtons.style.opacity = '1';
-        heroButtons.style.transform = 'translateY(0)';
-    }
-    if (heroFeatures) {
-        heroFeatures.style.opacity = '1';
-        heroFeatures.style.transform = 'translateY(0)';
-    }
-    features.forEach(feature => {
-        feature.style.opacity = '1';
-        feature.style.transform = 'translateY(0)';
-    });
     
     if (typeof axe !== 'undefined') {
         axe.run().then(results => {
