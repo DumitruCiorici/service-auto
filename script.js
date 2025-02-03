@@ -348,4 +348,89 @@ function initializeMap() {
     L.marker([45.7640, 4.8357]).addTo(map)
         .bindPopup('Locația noastră!')
         .openPopup(); 
-} 
+}
+
+function initializeServicesSlider() {
+    const container = document.querySelector('.services-container');
+    const prevBtn = document.querySelector('.prev-arrow');
+    const nextBtn = document.querySelector('.next-arrow');
+    const serviceBoxes = document.querySelectorAll('.service-box');
+    const dotsContainer = document.querySelector('.slider-dots');
+    
+    let currentIndex = 0;
+    const boxesPerView = window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1;
+    
+    // Create dots
+    serviceBoxes.forEach((_, index) => {
+        if (index % boxesPerView === 0) {
+            const dot = document.createElement('div');
+            dot.classList.add('slider-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        }
+    });
+    
+    function updateDots() {
+        const dots = document.querySelectorAll('.slider-dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === Math.floor(currentIndex / boxesPerView));
+        });
+    }
+    
+    function goToSlide(index) {
+        currentIndex = index;
+        const offset = serviceBoxes[index].offsetLeft;
+        container.scrollTo({
+            left: offset,
+            behavior: 'smooth'
+        });
+        updateDots();
+    }
+    
+    function slideNext() {
+        if (currentIndex < serviceBoxes.length - boxesPerView) {
+            currentIndex++;
+            goToSlide(currentIndex);
+        }
+    }
+    
+    function slidePrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            goToSlide(currentIndex);
+        }
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', slideNext);
+    prevBtn.addEventListener('click', slidePrev);
+    
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    container.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    container.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) {
+            slideNext();
+        } else if (touchEndX - touchStartX > 50) {
+            slidePrev();
+        }
+    });
+    
+    // Update slider on window resize
+    window.addEventListener('resize', () => {
+        const newBoxesPerView = window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1;
+        if (newBoxesPerView !== boxesPerView) {
+            location.reload();
+        }
+    });
+}
+
+// Initialize slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeServicesSlider); 
