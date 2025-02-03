@@ -76,11 +76,11 @@ body {
     gap: 0.5rem;
 }
 
-/* Critical CSS for hero section */
+/* Hero section */
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3') center/cover;
+                url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc') center/cover fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,19 +89,33 @@ body {
     color: var(--secondary-color);
     padding: 0 1rem;
     padding-top: 70px;
-    transition: none;
+    position: relative;
 }
 
 .hero-content,
 .hero-buttons,
 .hero-features {
-    opacity: 0; /* Ascundem inițial */
-    transform: translateY(20px); /* Poziția inițială */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Adăugăm tranziții */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
 }
 
-.hero-content {
-    margin-bottom: 4rem;
+.hero.loaded .hero-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.hero.loaded .hero-buttons {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+}
+
+.hero.loaded .hero-features {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
 }
 
 .hero-content h1 {
@@ -121,6 +135,19 @@ body {
     gap: 1rem;
     justify-content: center;
     margin-top: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    width: 90%;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .btn {
@@ -142,15 +169,6 @@ body {
     background-color: var(--button-secondary-bg); /* White */
     color: var(--text-color); /* Black */
     border: 2px solid var(--text-color); /* Black border */
-}
-
-.hero-features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 900px;
-    width: 90%;
-    margin-top: 2rem;
 }
 
 .feature {

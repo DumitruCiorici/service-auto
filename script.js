@@ -1,8 +1,21 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Așteaptă încărcarea completă a resurselor
+    window.addEventListener('load', () => {
+        document.body.style.opacity = '1';
+        document.body.style.visibility = 'visible';
+    });
+
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.classList.add('loaded');
+    }
+});
+
 document.body.classList.remove('loading');
 
 window.addEventListener('load', () => {
     document.body.classList.remove('hidden');
-
+    
     const loadingScreen = document.querySelector('.loading-screen');
     const heroContent = document.querySelector('.hero-content');
     const heroButtons = document.querySelector('.hero-buttons');
@@ -11,6 +24,9 @@ window.addEventListener('load', () => {
     
     if (loadingScreen) {
         loadingScreen.classList.add('fade-out');
+        setTimeout(() => {
+            loadingScreen.remove();
+        }, 700);
     }
     
     if (heroContent) {
@@ -30,12 +46,6 @@ window.addEventListener('load', () => {
         feature.style.transform = 'translateY(0)';
     });
     
-    setTimeout(() => {
-        if (loadingScreen) {
-            loadingScreen.remove();
-        }
-    }, 700);
-
     if (typeof axe !== 'undefined') {
         axe.run().then(results => {
             console.log(results);
