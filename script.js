@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hero) {
         hero.classList.add('loaded');
     }
+
+    $('#spanYear').html(new Date().getFullYear());
 });
 
 document.body.classList.remove('loading');
