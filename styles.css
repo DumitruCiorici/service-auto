@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #000000; /* Black */
-    --secondary-color: #ffffff; /* White */
-    --accent-color: #f0f0f0; /* Light gray for sections */
-    --text-color: #222222; /* Darker gray for better contrast */
-    --link-color: #1a0dab; /* Dark blue for links */
-    --button-primary-bg: #4a4a4a; /* Darker gray for buttons */
-    --button-secondary-bg: #ffffff; /* White */
-    --button-text-color: #ffffff; /* White */
+    --primary-color: #000000; 
+    --secondary-color: #ffffff; 
+    --accent-color: #f0f0f0; 
+    --text-color: #222222; 
+    --link-color: #1a0dab; 
+    --button-primary-bg: #4a4a4a; 
+    --button-secondary-bg: #ffffff; 
+    --button-text-color: #ffffff; 
     --transition: all 0.3s ease;
 }
 
@@ -20,7 +20,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--secondary-color); /* White */
+    background-color: var(--secondary-color); 
 }
 
 .navbar {
@@ -54,19 +54,19 @@ body {
 }
 
 .nav-link {
-    color: var(--text-color); /* Dark gray */
+    color: var(--text-color); 
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
 }
 
 .nav-link:hover {
-    color: var(--link-color); /* Dark blue */
+    color: var(--link-color); 
 }
 
 .nav-phone {
-    background: var(--primary-color); /* Black */
-    color: var(--button-text-color); /* White */
+    background: var(--primary-color); 
+    color: var(--button-text-color); 
     padding: 0.5rem 1rem;
     border-radius: 25px;
     text-decoration: none;
@@ -75,7 +75,6 @@ body {
     gap: 0.5rem;
 }
 
-/* Hero section */
 .hero {
     margin-top: 70px;
     min-height: calc(100vh - 70px);
@@ -160,7 +159,7 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #333; /* O nuanță mai deschisă */
+    background-color: #333;
 }
 
 .btn-secondary {
@@ -239,13 +238,13 @@ body {
 }
 
 .service-box {
-    background: var(--accent-color); /* Light gray */
+    background: var(--accent-color); 
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
     transition: var(--transition);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    color: var(--text-color); /* Dark gray */
+    color: var(--text-color); 
 }
 
 .service-box:hover {
@@ -356,7 +355,6 @@ body {
     transform: translateY(0);
 }
 
-/* Lightbox Styles */
 .lightbox {
     display: none;
     position: fixed;
@@ -453,13 +451,13 @@ body {
 }
 
 .faq-item {
-    background: var(--accent-color); /* Light gray */
+    background: var(--accent-color); 
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: var(--transition);
     height: fit-content;
-    color: var(--text-color); /* Black */
+    color: var(--text-color); 
 }
 
 .faq-item:hover {
@@ -473,14 +471,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--secondary-color); /* White */
+    background: var(--secondary-color); 
     border-bottom: 1px solid transparent;
     transition: var(--transition);
 }
 
 .faq-question h3 {
     font-size: 1.1rem;
-    color: var(--text-color); /* Black */
+    color: var(--text-color); 
     margin: 0;
     padding-right: 2rem;
 }
@@ -496,13 +494,13 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    background: var(--accent-color); /* Light gray */
+    background: var(--accent-color); 
     position: relative;
 }
 
 .faq-answer-content {
     padding: 1.5rem;
-    color: var(--text-color); /* Black */
+    color: var(--text-color); 
     line-height: 1.6;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -659,7 +657,7 @@ body {
     .form-group select,
     .form-group textarea {
         padding: 15px;
-        font-size: 16px; /* Previne zoom-ul pe iOS */
+        font-size: 16px; 
     }
 
     .section-title {
@@ -815,7 +813,7 @@ footer {
 .stat-number {
     font-size: 3.5rem;
     font-weight: bold;
-    color: #3498db; /* Schimbăm culoarea la albastru pentru contrast */
+    color: #3498db; 
     display: block;
     margin-bottom: 0.5rem;
 }
@@ -839,15 +837,14 @@ footer {
 }
 
 .loading-screen {
-    display: none; /* Ascunde loading screen-ul */
-    /* Asigură-te că loading screen-ul este corect stilizat */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.8); /* Fundal semi-transparent */
-    z-index: 9999; /* Asigură-te că este deasupra altor elemente */
+    background: rgba(255, 255, 255, 0.8); 
+    z-index: 9999; 
 }
 
 .hide-on-mobile {
@@ -941,7 +938,6 @@ footer {
     margin: 0 auto;
 }
 
-/* Adaugă aceste stiluri pentru meniul mobil */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -1001,7 +997,6 @@ footer {
         margin-top: 1rem;
     }
 
-    /* Animație pentru meniul hamburger */
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(8px, 6px);
     }
@@ -1059,7 +1054,6 @@ footer {
     }
 }
 
-/* Update pentru Servicii Slider Styles */
 .services-slider {
     position: relative;
     max-width: 1200px;
@@ -1172,7 +1166,6 @@ footer {
     transform: scale(1.3);
 }
 
-/* Tablet Styles */
 @media (max-width: 992px) {
     .service-box {
         flex: 0 0 calc((100% - 20px) / 2);
@@ -1196,7 +1189,6 @@ footer {
     }
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
     .service-box {
         flex: 0 0 calc(100% - 20px);
@@ -1244,7 +1236,6 @@ footer {
     }
 }
 
-/* Pentru ecrane foarte mici */
 @media (max-width: 480px) {
     .services-slider {
         padding: 0 30px;
@@ -1270,7 +1261,6 @@ footer {
     }
 }
 
-/* Pentru a preveni scroll-ul orizontal pe mobile */
 @media (hover: none) {
     .services-container {
         -webkit-overflow-scrolling: touch;
@@ -1282,7 +1272,6 @@ footer {
     }
 }
 
-/* Pentru dispozitive cu ecran landscape */
 @media (max-height: 500px) and (orientation: landscape) {
     .services-slider {
         padding: 0 40px;

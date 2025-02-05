@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <script>
-        // Defer loading of Font Awesome CSS
         document.addEventListener("DOMContentLoaded", function() {
             const link = document.createElement("link");
             link.rel = "stylesheet";
@@ -27,19 +26,7 @@
             visibility: hidden;
         }
     </style>
-    <!-- Ștergeți sau comentați acest bloc din head -->
-    <!-- <style>
-        .hidden {
-            display: none;
-        }
-        /* Stiluri critice pentru a îmbunătăți LCP */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-                        url('https://images.unsplash.com/photo-1625047509168-a7026ade842b') center/cover;
-            background-image: url('https://images.unsplash.com/photo-1625047509168-a7026ade842b');
-        }
-    </style> -->
+
 </head>
 <body class="hidden">
     <div class="loading-screen">Loading...</div>
@@ -228,10 +215,8 @@
         </div>
 
         <div class="gallery-grid">
-            <!-- Imaginile vor fi adăugate dinamic prin JavaScript -->
         </div>
 
-        <!-- Lightbox Modal -->
         <div class="lightbox" id="lightbox">
             <span class="lightbox-close">&times;</span>
             <img class="lightbox-image" src="" alt="Imagine Galerie">
